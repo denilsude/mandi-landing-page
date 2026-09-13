@@ -153,13 +153,13 @@
     <section id="contato" class="contato bg-dark">
         <div class="container">
             <h2>Vamos entender o cenário da sua empresa</h2>
-            <form action="#" method="POST" class="form-diagnostico">
-                <input type="text" placeholder="Nome Completo" required>
-                <input type="text" placeholder="Nome da Empresa" required>
-                <input type="email" placeholder="E-mail Corporativo" required>
-                <input type="tel" placeholder="WhatsApp" required>
+            <form action="https://formspree.io/f/xoeqongv" method="POST" class="form-diagnostico">
+                <input type="text" name="nome" placeholder="Nome Completo" required>
+                <input type="text" name="empresa" placeholder="Nome da Empresa" required>
+                <input type="email" name="email" placeholder="E-mail Corporativo" required>
+                <input type="tel" name="whatsapp" placeholder="WhatsApp" required>
                 
-                <select required>
+                <select name="qtd_computadores" required>
                     <option value="" disabled selected>Quantidade de computadores</option>
                     <option value="1-5">1 a 5</option>
                     <option value="6-15">6 a 15</option>
@@ -167,14 +167,14 @@
                     <option value="30+">Mais de 30</option>
                 </select>
 
-                <select required>
+                <select name="ti_interno" required>
                     <option value="" disabled selected>Possui TI interno hoje?</option>
                     <option value="interno">Sim, funcionário interno</option>
                     <option value="terceirizado">Terceirizado</option>
                     <option value="nao">Não</option>
                 </select>
 
-                <textarea rows="4" placeholder="O que você precisa resolver com urgência? (Ex: Internet caindo, backup...)"></textarea>
+                <textarea name="mensagem" rows="4" placeholder="O que você precisa resolver com urgência? (Ex: Internet caindo, backup...)"></textarea>
                 
                 <button type="submit" class="btn-primary btn-block">Solicitar Contato Comercial</button>
             </form>
@@ -183,10 +183,10 @@
 
     <footer>
         <div class="container footer-content">
-<div class="footer-info">
-    <img src="public/logo.png" alt="Mandi Tecnologia" class="logo-footer">
-    <p>TI Gerenciada para Pequenas e Médias Empresas.</p>
-</div>
+            <div class="footer-info">
+                <img src="public/logo.png" alt="Mandi Tecnologia" class="logo-footer">
+                <p>TI Gerenciada para Pequenas e Médias Empresas.</p>
+            </div>
             <div class="footer-links">
                 <p><strong>Comercial:</strong> comercial@manditecnologia.com.br</p>
                 <p><strong>Suporte:</strong> suporte@manditecnologia.com.br</p>
