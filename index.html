@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PFSL99R6');</script>
+<!-- End Google Tag Manager -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mandi Tecnologia — Departamento de TI Preventivo</title>
-<meta name="description" content="Gestão de rede, monitoramento Zabbix, firewall e suporte corporativo para blindar sua operação contra quedas e lentidão.">
+<title>Mandi Tecnologia — Gestão e Segurança de TI B2B</title>
+<meta name="description" content="Gestão de rede, monitoramento Zabbix 24/7, firewall corporativo e suporte técnico preventivo para pequenas e médias empresas.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="templatemo-623-novapay-style.css">
+
 <style>
-  /* Ajustes específicos para conversão B2B e WhatsApp */
+  /* Personalizações Mandi Tecnologia */
   .btn-whatsapp {
     background: #25D366;
     border: 1px solid #25D366;
@@ -33,17 +43,47 @@
     box-shadow: 0 12px 32px rgba(37, 211, 102, .25);
   }
   .btn-whatsapp svg {
-    width: 18px;
-    height: 18px;
-    fill: currentColor;
-    transition: transform .5s var(--silk);
+    width: 18px; height: 18px; fill: currentColor; transition: transform .5s var(--silk);
   }
-  .btn-whatsapp:hover svg {
-    transform: translateX(3px);
+  .btn-whatsapp:hover svg { transform: translateX(3px); }
+  
+  .form-container {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 500px;
+    margin: 40px auto 0;
+    box-shadow: 0 20px 48px rgba(0,0,0,.15);
   }
+  .form-input {
+    width: 100%;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    margin-bottom: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .form-input:focus { border-color: var(--sky); }
+  .form-input::placeholder { color: var(--text3); }
+  select.form-input { appearance: none; cursor: pointer; }
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PFSL99R6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- TICKER (Monitoramento Simulado) -->
+<div class="ticker">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
 
 <!-- NAV -->
 <nav id="mainNav">
@@ -55,11 +95,13 @@
   </a>
   <div class="nav-links">
     <a href="#solucoes">Soluções</a>
-    <a href="#infraestrutura">Infraestrutura</a>
-    <a href="#seguranca">Segurança</a>
+    <a href="#planos">Planos MSP</a>
+    <a href="#seguranca">Infraestrutura</a>
+    <a href="#faq">FAQ</a>
   </div>
   <div class="nav-cta">
-    <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." target="_blank" class="btn-whatsapp" style="padding: 8px 18px; font-size: 13px;">Agendar Diagnóstico</a>
+    <a href="#contato" class="btn-ghost">Enviar Mensagem</a>
+    <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." target="_blank" class="btn-whatsapp" style="padding: 8px 18px; font-size: 13px;">Falar no WhatsApp</a>
   </div>
   <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -69,10 +111,12 @@
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <a href="#solucoes">Soluções</a>
-  <a href="#infraestrutura">Infraestrutura</a>
-  <a href="#seguranca">Segurança</a>
+  <a href="#planos">Planos MSP</a>
+  <a href="#seguranca">Infraestrutura</a>
+  <a href="#faq">FAQ</a>
   <div class="m-btns">
-    <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." target="_blank" class="btn-whatsapp">Agendar Diagnóstico</a>
+    <a href="#contato" class="btn-ghost">Enviar Mensagem</a>
+    <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." target="_blank" class="btn-whatsapp">Falar no WhatsApp</a>
   </div>
 </div>
 
@@ -81,30 +125,23 @@
   <div class="hero-content silk-reveal-left">
     <div class="hero-badge">
       <span class="badge-dot" style="background: var(--green);"></span>
-      Monitoramento Ativo 24/7
+      Departamento de TI Corporativo
     </div>
-    <h1>A TI da sua<br>empresa não pode<br><span>parar.</span></h1>
-    <p class="hero-sub">Seu departamento de TI preventivo. Gestão de redes, Firewall avançado, Backup em Nuvem e Suporte Especializado. Chega de apagar incêndios e perder dinheiro com a rede fora do ar.</p>
+    <h1>A operação da<br>sua empresa<br><span>não pode parar.</span></h1>
+    <p class="hero-sub">Assumimos a sua tecnologia. Monitoramento ativo via Zabbix, segurança de borda com firewalls avançados e suporte especializado focado em evitar problemas, não apenas em apagar incêndios.</p>
     <div class="hero-btns">
       <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." class="btn-whatsapp" target="_blank">
-        Solicitar Diagnóstico de TI
+        Agendar Diagnóstico Gratuito
         <svg viewBox="0 0 16 16"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
       </a>
+      <a href="#contato" class="btn-outline">Solicitar Orçamento</a>
     </div>
     <div class="hero-trust">
-      <p class="hero-trust-text" style="margin-left: 0;"><strong>Blindando</strong> pequenas e médias empresas</p>
+      <p class="hero-trust-text" style="margin-left: 0;">Protegendo e conectando o mercado B2B.</p>
     </div>
   </div>
+  
   <div class="hero-visual silk-reveal-right">
-    <div class="float-badge fb-left">
-      <div class="float-badge-icon" style="background:rgba(61,204,142,.12)">
-        <svg width="18" height="18" fill="none" stroke="#3DCC8E" stroke-width="2" stroke-linecap="round" viewBox="0 0 18 18"><polyline points="2,12 7,7 11,10 16,4"/></svg>
-      </div>
-      <div class="float-badge-info">
-        <div class="val">99.9%</div>
-        <div class="lbl">Uptime da Rede</div>
-      </div>
-    </div>
     <div class="dash-card">
       <div class="dash-topbar">
         <div class="dash-dots">
@@ -118,52 +155,34 @@
       <div class="dash-body">
         <div class="dash-stats">
           <div class="dash-stat">
-            <div class="dash-stat-label">Latência</div>
+            <div class="dash-stat-label">Latência Link</div>
             <div class="dash-stat-val">12ms</div>
-            <div class="dash-stat-change" style="color:var(--green)">Túnel WireGuard</div>
+            <div class="dash-stat-change" style="color:var(--green)">Túnel WireGuard OK</div>
           </div>
           <div class="dash-stat">
             <div class="dash-stat-label">Ameaças</div>
             <div class="dash-stat-val">0</div>
-            <div class="dash-stat-change" style="color:var(--text3)">Bloqueadas no Firewall</div>
+            <div class="dash-stat-change" style="color:var(--text3)">Bloqueadas no IPsec</div>
           </div>
           <div class="dash-stat">
-            <div class="dash-stat-label">Backup</div>
-            <div class="dash-stat-val">OK</div>
-            <div class="dash-stat-change" style="color:var(--green)">Proxmox Sincronizado</div>
+            <div class="dash-stat-label">Proxmox</div>
+            <div class="dash-stat-val">Sync</div>
+            <div class="dash-stat-change" style="color:var(--green)">Backup concluído</div>
           </div>
         </div>
         <div class="chart-wrap">
           <div class="chart-head">
-            <span class="chart-head-title">Tráfego de Rede Isolada (VLANs)</span>
-            <span class="chart-badge">Estável</span>
+            <span class="chart-head-title">Tráfego de Rede (VLANs Corporativas)</span>
+            <span class="chart-badge">Seguro</span>
           </div>
           <div style="display:flex;align-items:flex-end;gap:6px;height:64px">
             <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:45%;border-top:2px solid var(--sky)"></div>
-            <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:52%;border-top:2px solid var(--sky)"></div>
+            <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:72%;border-top:2px solid var(--sky)"></div>
             <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:48%;border-top:2px solid var(--sky)"></div>
-            <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:50%;border-top:2px solid var(--sky)"></div>
-            <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:55%;border-top:2px solid var(--sky)"></div>
-            <div style="flex:1;background:rgba(74,158,232,.25);border-radius:3px 3px 0 0;height:60%;border-top:2px solid var(--sky2)"></div>
-            <div style="flex:1;background:rgba(74,158,232,.35);border-radius:3px 3px 0 0;height:58%;border-top:2px solid var(--sky2)"></div>
-          </div>
-        </div>
-        <div class="tx-list">
-          <div class="tx-item">
-            <div class="tx-icon" style="background:#0E2230;color:#4A9EE8">AD</div>
-            <div class="tx-info">
-              <div class="tx-name">Active Directory (SRV-DC)</div>
-              <div class="tx-date">Políticas Sincronizadas</div>
-            </div>
-            <div class="tx-amount" style="color:var(--green)">Online</div>
-          </div>
-          <div class="tx-item">
-            <div class="tx-icon" style="background:#1A1020;color:#A87EE8">MK</div>
-            <div class="tx-info">
-              <div class="tx-name">MikroTik Edge Router</div>
-              <div class="tx-date">Tráfego Otimizado</div>
-            </div>
-            <div class="tx-amount" style="color:var(--green)">Online</div>
+            <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:88%;border-top:2px solid var(--sky)"></div>
+            <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:65%;border-top:2px solid var(--sky)"></div>
+            <div style="flex:1;background:rgba(74,158,232,.25);border-radius:3px 3px 0 0;height:92%;border-top:2px solid var(--sky2)"></div>
+            <div style="flex:1;background:rgba(74,158,232,.35);border-radius:3px 3px 0 0;height:100%;border-top:2px solid var(--sky2)"></div>
           </div>
         </div>
       </div>
@@ -171,7 +190,7 @@
   </div>
 </section>
 
-<!-- LOGOS (Tecnologias Parceiras) -->
+<!-- LOGOS (Substituídos via JS no final do arquivo) -->
 <div class="logos-section">
   <div class="logos-label">Integramos e Administramos</div>
   <div class="logos-track-wrap">
@@ -179,74 +198,320 @@
   </div>
 </div>
 
-<!-- FEATURES -->
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stat-block">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+    </div>
+    <div class="stat-num" data-target="99.9" data-suffix="%" data-decimal="1">0</div>
+    <div class="stat-label">Garantia de Uptime</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%" data-width="99.9%"></div></div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+    </div>
+    <div class="stat-num" data-target="24" data-suffix="/7">0</div>
+    <div class="stat-label">Monitoramento Ativo</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%;background:#3DCC8E" data-width="100%"></div></div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <div class="stat-num" data-target="100" data-suffix="%">0</div>
+    <div class="stat-label">Backups Verificados</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%;background:#8888F8" data-width="100%"></div></div>
+  </div>
+  <div class="stat-block">
+    <div class="stat-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    </div>
+    <div class="stat-num" data-target="15" data-suffix=" min">0</div>
+    <div class="stat-label">Tempo Médio de Resposta</div>
+    <div class="stat-bar-wrap"><div class="stat-bar" style="width:0%;background:#E85A5A" data-width="85%"></div></div>
+  </div>
+</section>
+
+<!-- FEATURES (Soluções) -->
 <section class="features-section" id="solucoes">
   <div class="features-header silk-reveal">
-    <div class="section-tag">A evolução do suporte de TI</div>
-    <h2 class="section-title">Soluções Corporativas Completas</h2>
-    <p class="section-sub">Assumimos a responsabilidade tecnológica da sua empresa para que você foque apenas no crescimento do seu negócio.</p>
+    <div class="section-tag">Nossas Soluções</div>
+    <h2 class="section-title">Engenharia de TI Corporativa</h2>
+    <p class="section-sub">Diga adeus ao "menino do computador". Entregamos processos corporativos, segmentação de redes e gestão proativa para que você escale com segurança.</p>
+  </div>
+  <div class="sticky-layout">
+    <div class="sticky-cards">
+
+      <div class="sticky-card active" data-panel="0">
+        <div class="sticky-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Gestão de Redes e Firewall</h3>
+        <p>Isolamos a rede da sua operação do Wi-Fi de visitantes usando MikroTik e switches gerenciáveis (VLANs). Bloqueamos acessos indevidos e garantimos que sua internet seja balanceada.</p>
+      </div>
+
+      <div class="sticky-card" data-panel="1">
+        <div class="sticky-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>Monitoramento Zabbix 24/7</h3>
+        <p>Instalamos sondas na sua infraestrutura. Se um link cair, um HD lotar ou um servidor superaquecer, nosso Centro de Operações (NOC) atua antes da sua equipe perceber.</p>
+      </div>
+
+      <div class="sticky-card" data-panel="2">
+        <div class="sticky-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
+        <h3>Servidores e Backup</h3>
+        <p>Administração de Active Directory, políticas de acesso (GPO) e rotinas de segurança blindadas via Proxmox Backup Server. Seus dados protegidos contra ransomware.</p>
+      </div>
+
+    </div>
+    
+    <div class="sticky-panel-wrap" style="pointer-events: none; opacity: 0.7;">
+      <div class="sticky-panel">
+         <div class="panel-topbar"><span class="dash-title-bar">Visão Técnica</span></div>
+         <div class="panel-content" style="align-items:center; justify-content:center; text-align:center;">
+            <svg viewBox="0 0 24 24" width="80" height="80" fill="none" stroke="var(--sky)" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <h3 style="margin-top:20px; font-family:'Outfit', sans-serif;">Gestão Ativa</h3>
+            <p style="color:var(--text3); font-size:14px; margin-top:10px;">Monitoramento contínuo dos seus ativos corporativos.</p>
+         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING (Planos MSP) -->
+<section class="pricing-section" id="planos">
+  <div style="text-align:center">
+    <div class="section-tag">Modelo de Contrato</div>
+    <h2 class="section-title">Terceirização Sob Medida</h2>
+    <p class="section-sub">Planos de serviços gerenciados mensais previsíveis. Sem surpresas ou taxas escondidas por chamados avulsos.</p>
   </div>
   
-  <!-- Substituindo o sistema complexo de abas por cards limpos de alta conversão -->
-  <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto;">
+  <div class="pricing-grid" style="margin-top:40px;">
+    <!-- Plano 1 -->
+    <div class="price-card">
+      <div class="price-plan">Essencial</div>
+      <div class="price-amount" style="font-size:32px;">Sob Consulta</div>
+      <div class="price-period">Focado em pequenas operações</div>
+      <ul class="price-features">
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Suporte Técnico Remoto Ilimitado</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Antivírus e Patches</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Monitoramento de Link de Internet</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Relatório Mensal Básio</li>
+      </ul>
+      <a href="#contato" class="price-btn price-btn-ghost" style="text-align:center; display:block; text-decoration:none;">Agendar Avaliação</a>
+    </div>
     
-    <div class="sticky-card active">
-      <div class="sticky-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <h3>Segurança e Redes (MikroTik / FortiGate)</h3>
-      <p>Isolamento de rede de visitantes e operação, bloqueio de invasões e gestão avançada de tráfego com equipamentos corporativos.</p>
+    <!-- Plano 2 -->
+    <div class="price-card featured">
+      <div class="featured-badge">Mais Contratado (MSP)</div>
+      <div class="price-plan">Infraestrutura Avançada</div>
+      <div class="price-amount" style="font-size:32px;">Sob Consulta</div>
+      <div class="price-period">Para empresas que não podem parar</div>
+      <ul class="price-features">
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Tudo do Plano Essencial</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Monitoramento Avançado (Zabbix/Grafana)</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Firewall e Redes MikroTik</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Administração de Servidores (AD)</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Backup (Proxmox/Nuvem)</li>
+      </ul>
+      <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Infraestrutura%20Avan%C3%A7ada." target="_blank" class="price-btn price-btn-primary" style="text-align:center; display:block; text-decoration:none;">Falar com Especialista</a>
     </div>
 
-    <div class="sticky-card active">
-      <div class="sticky-card-icon">
-        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <h3>Monitoramento Zabbix 24/7</h3>
-      <p>Sondas instaladas na sua infraestrutura avisam nossa central sobre quedas ou gargalos antes mesmo da sua equipe perceber.</p>
+    <!-- Plano 3 -->
+    <div class="price-card">
+      <div class="price-plan">Corporativo</div>
+      <div class="price-amount" style="font-size:32px;">Projetos</div>
+      <div class="price-period">Demanda pontual ou estrutural</div>
+      <ul class="price-features">
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Mapeamento de Vulnerabilidades</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Projetos de Túnel VPN (WireGuard)</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Migração de Infraestrutura / Nuvem</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Cabeamento e Reestruturação de Rack</li>
+      </ul>
+      <a href="#contato" class="price-btn price-btn-ghost" style="text-align:center; display:block; text-decoration:none;">Agendar Reunião Técnica</a>
     </div>
-
-    <div class="sticky-card active">
-      <div class="sticky-card-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
-      </div>
-      <h3>Gestão de Servidores e Backup</h3>
-      <p>Administração de Active Directory, políticas de acessos, servidores Windows/Linux e rotinas de segurança blindadas via Proxmox Backup.</p>
-    </div>
-
   </div>
+</section>
 
-  <div style="text-align: center; margin-top: 60px;">
-    <a href="https://api.whatsapp.com/send?phone=554184594099&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." class="btn-whatsapp" target="_blank">Falar com o Setor de Engenharia</a>
+<!-- SECURITY (Padrões de Infraestrutura) -->
+<section class="security-section" id="seguranca">
+  <div class="security-inner">
+    <div>
+      <div class="section-tag">Padrão Corporativo</div>
+      <h2 class="section-title">Segurança de Dados não é luxo, é sobrevivência.</h2>
+      <p class="section-sub" style="margin-bottom:24px">Cada dispositivo e servidor gerenciado pela Mandi segue diretrizes rigorosas. Utilizamos as melhores práticas e ferramentas corporativas para manter sua operação blindada contra ataques externos e falhas internas.</p>
+    </div>
+    <div class="security-badges">
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="sec-badge-name">VLANs e Segmentação</div>
+        <div class="sec-badge-desc">Isolamento total da rede administrativa e clientes.</div>
+      </div>
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="sec-badge-name">Acesso Seguro VPN</div>
+        <div class="sec-badge-desc">Túneis criptografados via WireGuard / IPsec.</div>
+      </div>
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="sec-badge-name">Disponibilidade Local</div>
+        <div class="sec-badge-desc">Failover e redundância em equipamentos críticos.</div>
+      </div>
+      <div class="sec-badge">
+        <div class="sec-badge-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="sec-badge-name">Backup Imutável 3-2-1</div>
+        <div class="sec-badge-desc">Rotinas automatizadas protegendo contra Ransomware.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-section">
+  <div style="text-align:center">
+    <div class="section-tag">Depoimentos B2B</div>
+    <h2 class="section-title">O que as empresas dizem</h2>
+  </div>
+  <div class="testi-track-wrap">
+    <div class="testi-track" id="testiTrack"></div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="app-section" id="contato">
+  <div class="app-inner" style="grid-template-columns: 1fr; text-align: center;">
+    <div>
+      <div class="section-tag">Atendimento Rápido</div>
+      <h2 class="section-title">Solicite seu Diagnóstico de TI</h2>
+      <p class="section-sub">Deixe seus dados abaixo ou inicie uma conversa agora pelo WhatsApp. Vamos avaliar os gargalos da sua rede e apresentar uma solução definitiva.</p>
+      
+      <!-- Formulário integrado ao Formspree -->
+      <form action="https://formspree.io/f/xoeqongv" method="POST" class="form-container">
+         <input type="hidden" name="_next" value="https://manditecnologia.com.br/obrigado.html">
+
+         <input type="text" name="nome" placeholder="Nome Completo" required class="form-input">
+         <input type="text" name="empresa" placeholder="Nome da Empresa" required class="form-input">
+         <input type="email" name="email" placeholder="E-mail Corporativo" required class="form-input">
+         <input type="tel" name="telefone" placeholder="WhatsApp / Telefone" required class="form-input">
+         
+         <select name="qtd_computadores" required class="form-input">
+             <option value="" disabled selected>Quantidade de computadores</option>
+             <option value="1-5">1 a 5</option>
+             <option value="6-15">6 a 15</option>
+             <option value="16-30">16 a 30</option>
+             <option value="30+">Mais de 30</option>
+         </select>
+
+         <select name="ti_interno" required class="form-input">
+             <option value="" disabled selected>Possui TI interno hoje?</option>
+             <option value="interno">Sim, funcionário interno</option>
+             <option value="terceirizado">Terceirizado</option>
+             <option value="nao">Não</option>
+         </select>
+
+         <textarea name="mensagem" placeholder="Fale brevemente sobre o problema atual da sua TI..." rows="4" class="form-input" style="resize:vertical;"></textarea>
+         
+         <button type="submit" class="btn-primary" style="width:100%; padding:14px; font-size:16px;">Solicitar Diagnóstico</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div style="text-align:left; margin-bottom: 24px;">
+      <div class="section-tag">Tire suas dúvidas</div>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+    </div>
+    <div class="faq-list" id="faqList"></div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer style="padding:40px max(48px, calc((100vw - var(--max-w)) / 2)) 28px; border-top:1px solid var(--border);">
-  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px">
-    <div>
-      <div class="nav-logo" style="margin-bottom: 8px;">Mandi Tecnologia</div>
-      <div style="font-size:13px;color:var(--text3)">Curitiba, PR • Atendimento Nacional B2B</div>
+<footer style="padding:40px max(48px, calc((100vw - var(--max-w)) / 2)) 28px; border-top:1px solid var(--border); display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px;">
+  <div style="display:flex; flex-direction:column; gap:8px;">
+    <div class="nav-logo">
+      Mandi Tecnologia
     </div>
-    <div style="font-size:13px;color:var(--text3)">
-      © 2026 Mandi Tecnologia. Todos os direitos reservados.
+    <div style="font-size:13px; color:var(--text3)">Departamento de TI Preventivo Corporativo.</div>
+    <div style="font-size:13px; color:var(--text3)">Curitiba, PR • Atendimento em todo o Brasil.</div>
+  </div>
+  
+  <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+    <div style="font-size:13px; color:var(--text3)">© 2026 Mandi Tecnologia. Todos os direitos reservados.</div>
+    <div style="display:flex; gap:12px; margin-top: 8px;">
+      <a href="#" class="social-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
     </div>
   </div>
 </footer>
 
+<!-- SCRIPT BASE DO TEMPLATE -->
 <script src="templatemo-623-novapay-script.js"></script>
+
+<!-- SCRIPT OVERRIDE MANDI TECNOLOGIA -->
 <script>
-  // Sobrescrevendo a lista de logos do template original para as tecnologias que a Mandi usa
   document.addEventListener('DOMContentLoaded', () => {
+    
+    // Ticker FX override
+    const tTrack = document.getElementById('tickerTrack');
+    if(tTrack) {
+      const msgs = [
+        {sym:'UPTIME',price:'99.9%',chg:'ESTÁVEL',up:true},
+        {sym:'ZABBIX',price:'Sondas',chg:'ONLINE',up:true},
+        {sym:'FIREWALL',price:'MikroTik',chg:'ATIVO',up:true},
+        {sym:'BACKUP',price:'Proxmox',chg:'CONCLUÍDO',up:true},
+        {sym:'WIREGUARD',price:'Túneis VPN',chg:'SEGURO',up:true},
+        {sym:'AD',price:'Sincronismo',chg:'OK',up:true}
+      ];
+      tTrack.innerHTML = '';
+      [...msgs,...msgs,...msgs].forEach(t=>{
+        const el = document.createElement('div'); el.className = 'ticker-item';
+        el.innerHTML = `<span class="ticker-sym">${t.sym}</span><span class="ticker-price" style="margin-left:8px;">${t.price}</span><span class="${t.up?'ticker-up':'ticker-dn'}" style="margin-left:8px;">${t.chg}</span>`;
+        tTrack.appendChild(el);
+      });
+    }
+
+    // Logos override
     const logos = ['MikroTik', 'FortiGate', 'Zabbix', 'Aruba', 'Proxmox', 'Windows Server', 'WireGuard', 'TP-Link'];
     const lt = document.getElementById('logosTrack');
     if(lt) {
-      lt.innerHTML = ''; // Limpa os do template financeiro
+      lt.innerHTML = ''; 
       [...logos,...logos,...logos].forEach(l=>{
-        const el = document.createElement('div');
-        el.className = 'logo-item';
-        el.textContent = l;
-        lt.appendChild(el);
+        const el = document.createElement('div'); el.className = 'logo-item'; el.textContent = l; lt.appendChild(el);
+      });
+    }
+
+    // Testimonials override
+    const testimonials = [
+      {q:'Desde que a Mandi assumiu nossa rede, a internet parou de oscilar e o sistema faturou o mês inteiro sem quedas.', name:'Diretoria B2B', role:'Indústria', init:'IN'},
+      {q:'Eles separam nossa rede de visitantes do nosso sistema interno. O nível de segurança que implantaram é fantástico.', name:'Gestão Operacional', role:'Logística', init:'LG'},
+      {q:'O monitoramento Zabbix funciona mesmo. O roteador travou e eles resolveram remotamente antes mesmo da gente reclamar.', name:'Administração', role:'Escritório Contábil', init:'AD'}
+    ];
+    const tt = document.getElementById('testiTrack');
+    if(tt) {
+      tt.innerHTML = '';
+      [...testimonials,...testimonials].forEach(t=>{
+        const el = document.createElement('div'); el.className = 'testi-card';
+        el.innerHTML = `<div class="testi-stars">${[...Array(5)].map(()=>'<svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>').join('')}</div><p class="testi-quote">"${t.q}"</p><div class="testi-author"><div class="testi-avatar">${t.init}</div><div><div class="testi-name">${t.name}</div><div class="testi-role">${t.role}</div></div></div>`;
+        tt.appendChild(el);
+      });
+    }
+
+    // FAQ override
+    const faqs = [
+      {q:'A Mandi atende empresas de qualquer tamanho?', a:'Nosso foco principal (MSP) é atender pequenas e médias empresas (PMEs) que precisam de profissionalismo de grandes corporações, mas sem o custo de ter um TI interno completo.'},
+      {q:'Vocês fazem visita técnica no local?', a:'Nosso foco é preventivo. Graças à nossa infraestrutura e configuração corporativa, 95% dos chamados são resolvidos de forma remota e imediata. As visitas locais são focadas em implantações de rede, troca física de equipamentos (roteadores, switches) ou projetos de cabeamento.'},
+      {q:'Como funciona o Diagnóstico de TI?', a:'Marcamos uma reunião inicial para entender as dores da sua empresa (quedas, lentidão, falta de backup). Em seguida, nossa equipe de engenharia mapeia sua rede para entregar um relatório apontando falhas e desenhando a solução definitiva.'},
+      {q:'Vocês fornecem os roteadores e equipamentos?', a:'Sim, podemos fornecer firewalls, roteadores MikroTik, switches gerenciáveis e servidores no modelo de comodato (Hardware as a Service) agregado ao contrato mensal, ou gerenciar a compra direta pela sua empresa.'}
+    ];
+    const faqList = document.getElementById('faqList');
+    if(faqList) {
+      faqList.innerHTML = '';
+      faqs.forEach((f)=>{
+        const item = document.createElement('div'); item.className = 'faq-item';
+        item.innerHTML = `<div class="faq-q"><span class="faq-q-text">${f.q}</span><svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></svg></div><div class="faq-a">${f.a}</div>`;
+        item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
+        faqList.appendChild(item);
       });
     }
   });
