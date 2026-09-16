@@ -12,12 +12,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mandi Tecnologia — Gestão e Segurança de TI B2B</title>
-<meta name="description" content="Gestão de rede, monitoramento Zabbix 24/7, firewall corporativo e suporte técnico preventivo para pequenas e médias empresas.">
+<meta name="description" content="Gestão de rede, monitoramento ativo 24/7, firewall corporativo e suporte técnico preventivo para pequenas e médias empresas.">
 
-<!-- Favicons -->
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
+<!-- Favicon Automático (Usa a sua logo) -->
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta name="theme-color" content="#0F1319">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,10 +92,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- NAV -->
 <nav id="mainNav">
   <a href="#" class="nav-logo">
-    <div class="nav-logo-mark" style="background: var(--sky);">
-      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-    </div>
-    Mandi Tecnologia
+    <img src="images/logo.png" alt="Mandi Tecnologia" style="height: 32px;">
   </a>
   <div class="nav-links">
     <a href="#solucoes">Soluções</a>
@@ -133,7 +129,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Departamento de TI Corporativo
     </div>
     <h1>A operação da<br>sua empresa<br><span>não pode parar.</span></h1>
-    <p class="hero-sub">Assumimos a sua tecnologia. Monitoramento ativo via Zabbix, segurança de borda com firewalls avançados e suporte especializado focado em evitar problemas, não apenas em apagar incêndios.</p>
+    <p class="hero-sub">Assumimos a sua tecnologia. Monitoramento proativo, segurança de borda com firewalls avançados e suporte especializado focado em evitar problemas, não apenas em apagar incêndios.</p>
     <div class="hero-btns">
       <a href="https://api.whatsapp.com/send?phone=5562999586839&text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20diagn%C3%B3stico%20de%20TI." class="btn-whatsapp" target="_blank">
         Agendar Diagnóstico Gratuito
@@ -155,7 +151,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span style="background:#3DCC8E"></span>
         </div>
         <span class="dash-title-bar">MANDI NOC DASHBOARD</span>
-        <span style="font-size:10px;color:var(--green);font-weight:500">● Live Zabbix</span>
+        <span style="font-size:10px;color:var(--green);font-weight:500">● Live Monitor</span>
       </div>
       <div class="dash-body">
         <div class="dash-stats">
@@ -252,30 +248,43 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="sticky-card active" data-panel="0">
         <div class="sticky-card-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <h3>Gestão de Redes e Firewall</h3>
-        <p>Isolamos a rede da sua operação do Wi-Fi de visitantes usando MikroTik e switches gerenciáveis (VLANs). Bloqueamos acessos indevidos e garantimos que sua internet seja balanceada.</p>
+        <p>Isolamos a rede da sua operação do Wi-Fi de visitantes usando switches gerenciáveis (VLANs). Bloqueamos acessos indevidos e garantimos que sua internet seja balanceada.</p>
       </div>
 
       <div class="sticky-card" data-panel="1">
         <div class="sticky-card-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>Monitoramento Zabbix 24/7</h3>
+        <h3>Monitoramento Ativo</h3>
         <p>Instalamos sondas na sua infraestrutura. Se um link cair, um HD lotar ou um servidor superaquecer, nosso Centro de Operações (NOC) atua antes da sua equipe perceber.</p>
       </div>
 
       <div class="sticky-card" data-panel="2">
         <div class="sticky-card-icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div>
         <h3>Servidores e Backup</h3>
-        <p>Administração de Active Directory, políticas de acesso (GPO) e rotinas de segurança blindadas via Proxmox Backup Server. Seus dados protegidos contra ransomware.</p>
+        <p>Administração de Active Directory, políticas de acesso (GPO) e rotinas de segurança blindadas em nuvem ou local. Seus dados protegidos contra ransomware.</p>
       </div>
 
     </div>
     
-    <div class="sticky-panel-wrap" style="pointer-events: none; opacity: 0.7;">
+    <!-- ESQUELETO DE GRAFANA (PLACEHOLDER) -->
+    <div class="sticky-panel-wrap">
       <div class="sticky-panel">
-         <div class="panel-topbar"><span class="dash-title-bar">Visão Técnica</span></div>
-         <div class="panel-content" style="align-items:center; justify-content:center; text-align:center;">
-            <svg viewBox="0 0 24 24" width="80" height="80" fill="none" stroke="var(--sky)" stroke-width="1" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <h3 style="margin-top:20px; font-family:'Outfit', sans-serif;">Gestão Ativa</h3>
-            <p style="color:var(--text3); font-size:14px; margin-top:10px;">Monitoramento contínuo dos seus ativos corporativos.</p>
+         <div class="panel-topbar">
+           <div class="dash-dots">
+             <span style="background:#E85A5A"></span>
+             <span style="background:#F0A030"></span>
+             <span style="background:#3DCC8E"></span>
+           </div>
+           <span class="dash-title-bar" style="margin-left:12px;">MÉTRICAS DO NOC</span>
+         </div>
+         <div class="panel-content" style="padding: 24px;">
+            <div style="background:var(--bg); border:1px solid var(--border); border-radius:10px; height:140px; margin-bottom:16px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+               <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--border2)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+               <span style="color:var(--text3); font-size:12px; margin-top:8px;">[ Estrutura para Painel Grafana ]</span>
+            </div>
+            <div style="display:flex; gap:16px;">
+              <div style="flex:1; background:var(--bg); border:1px solid var(--border); border-radius:10px; height:90px;"></div>
+              <div style="flex:1; background:var(--bg); border:1px solid var(--border); border-radius:10px; height:90px;"></div>
+            </div>
          </div>
       </div>
     </div>
@@ -313,10 +322,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="price-period">Valor variável por dispositivo e servidor</div>
       <ul class="price-features">
         <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Tudo do Plano Essencial</li>
-        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Monitoramento Avançado (Zabbix/Grafana)</li>
-        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Firewall e Redes MikroTik</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Monitoramento Avançado Ativo</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Firewall e Redes</li>
         <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Administração de Servidores (AD)</li>
-        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Backup (Proxmox/Nuvem)</li>
+        <li><svg viewBox="0 0 16 16"><polyline points="2,8 6,12 14,4"/></svg>Gestão de Backup Híbrido</li>
       </ul>
       <a href="https://api.whatsapp.com/send?phone=5562999586839&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20Plano%20Infraestrutura%20Avan%C3%A7ada." target="_blank" class="price-btn price-btn-primary" style="text-align:center; display:block; text-decoration:none;">Falar com Especialista</a>
     </div>
@@ -481,10 +490,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(tTrack) {
       const msgs = [
         {sym:'UPTIME',price:'99.9%',chg:'ESTÁVEL',up:true},
-        {sym:'ZABBIX',price:'Sondas',chg:'ONLINE',up:true},
-        {sym:'FIREWALL',price:'MikroTik',chg:'ATIVO',up:true},
-        {sym:'BACKUP',price:'Proxmox',chg:'CONCLUÍDO',up:true},
-        {sym:'WIREGUARD',price:'Túneis VPN',chg:'SEGURO',up:true},
+        {sym:'MONITORAMENTO',price:'Sondas',chg:'ONLINE',up:true},
+        {sym:'FIREWALL',price:'Ativo',chg:'SEGURO',up:true},
+        {sym:'BACKUP',price:'Rotina',chg:'CONCLUÍDO',up:true},
+        {sym:'VPN',price:'Túneis',chg:'CRIPTOGRAFADO',up:true},
         {sym:'AD',price:'Sincronismo',chg:'OK',up:true}
       ];
       tTrack.innerHTML = '';
@@ -521,7 +530,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }, {threshold: 0.5});
     statNums.forEach(el => statsObs.observe(el));
 
-    const logos = ['MikroTik', 'FortiGate', 'Zabbix', 'Aruba', 'Proxmox', 'Windows Server', 'WireGuard', 'TP-Link'];
+    const logos = ['Infraestrutura', 'Firewall', 'Redes', 'Switches', 'Servidores', 'Sistemas', 'Backup', 'Conectividade'];
     const lt = document.getElementById('logosTrack');
     if(lt) {
       lt.innerHTML = ''; 
@@ -533,7 +542,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const testimonials = [
       {q:'Desde que a Mandi assumiu nossa rede, a internet parou de oscilar e o sistema faturou o mês inteiro sem quedas.', name:'Diretoria B2B', role:'Indústria', init:'IN'},
       {q:'Eles separam nossa rede de visitantes do nosso sistema interno. O nível de segurança que implantaram é fantástico.', name:'Gestão Operacional', role:'Logística', init:'LG'},
-      {q:'O monitoramento Zabbix funciona mesmo. O roteador travou e eles resolveram remotamente antes mesmo da gente reclamar.', name:'Administração', role:'Escritório Contábil', init:'AD'}
+      {q:'O monitoramento funciona mesmo. O roteador travou e eles resolveram remotamente antes mesmo da gente reclamar.', name:'Administração', role:'Escritório Contábil', init:'AD'}
     ];
     const tt = document.getElementById('testiTrack');
     if(tt) {
@@ -549,7 +558,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       {q:'A Mandi atende empresas de qualquer tamanho?', a:'Nosso foco principal (MSP) é atender pequenas e médias empresas (PMEs) que precisam de profissionalismo de grandes corporações, mas sem o custo de ter um TI interno completo.'},
       {q:'Vocês fazem visita técnica no local?', a:'Nosso foco é preventivo. Graças à nossa infraestrutura e configuração corporativa, 95% dos chamados são resolvidos de forma remota e imediata. As visitas locais são focadas em implantações de rede, troca física de equipamentos (roteadores, switches) ou projetos de cabeamento.'},
       {q:'Como funciona o Diagnóstico de TI?', a:'Marcamos uma reunião inicial para entender as dores da sua empresa (quedas, lentidão, falta de backup). Em seguida, nossa equipe de engenharia mapeia sua rede para entregar um relatório apontando falhas e desenhando a solução definitiva.'},
-      {q:'Vocês fornecem os roteadores e equipamentos?', a:'Sim, podemos fornecer firewalls, roteadores MikroTik, switches gerenciáveis e servidores no modelo de comodato (Hardware as a Service) agregado ao contrato mensal, ou gerenciar a compra direta pela sua empresa.'}
+      {q:'Vocês fornecem os roteadores e equipamentos?', a:'Sim, podemos fornecer firewalls, roteadores, switches gerenciáveis e servidores no modelo de comodato (Hardware as a Service) agregado ao contrato mensal, ou gerenciar a compra direta pela sua empresa.'}
     ];
     const faqList = document.getElementById('faqList');
     if(faqList) {
