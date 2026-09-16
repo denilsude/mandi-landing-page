@@ -14,8 +14,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <title>Mandi Tecnologia — Gestão e Segurança de TI B2B</title>
 <meta name="description" content="Gestão de rede, monitoramento ativo 24/7, firewall corporativo e suporte técnico preventivo para pequenas e médias empresas.">
 
-<!-- Favicon Automático (Usa a sua logo) -->
-<link rel="icon" type="image/png" href="images/logo.png">
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#0F1319">
 <meta name="theme-color" content="#0F1319">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -84,7 +85,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- TICKER (Monitoramento Simulado) -->
+<!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
@@ -235,7 +236,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- FEATURES (Soluções) -->
+<!-- FEATURES -->
 <section class="features-section" id="solucoes">
   <div class="features-header silk-reveal">
     <div class="section-tag">Nossas Soluções</div>
@@ -265,33 +266,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
     
-    <!-- ESQUELETO DE GRAFANA (PLACEHOLDER) -->
+    <!-- PAINEL REPLICADO -->
     <div class="sticky-panel-wrap">
-      <div class="sticky-panel">
-         <div class="panel-topbar">
-           <div class="dash-dots">
-             <span style="background:#E85A5A"></span>
-             <span style="background:#F0A030"></span>
-             <span style="background:#3DCC8E"></span>
-           </div>
-           <span class="dash-title-bar" style="margin-left:12px;">MÉTRICAS DO NOC</span>
-         </div>
-         <div class="panel-content" style="padding: 24px;">
-            <div style="background:var(--bg); border:1px solid var(--border); border-radius:10px; height:140px; margin-bottom:16px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-               <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="var(--border2)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-               <span style="color:var(--text3); font-size:12px; margin-top:8px;">[ Estrutura para Painel Grafana ]</span>
+      <div class="dash-card" style="border: 1px solid var(--border); border-radius: 16px; box-shadow: 0 20px 48px rgba(0,0,0,.15); background: var(--bg2);">
+        <div class="dash-topbar">
+          <div class="dash-dots">
+            <span style="background:#E85A5A"></span>
+            <span style="background:#F0A030"></span>
+            <span style="background:#3DCC8E"></span>
+          </div>
+          <span class="dash-title-bar">MÉTRICAS DO NOC</span>
+          <span style="font-size:10px;color:var(--green);font-weight:500">● Live Monitor</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-stats">
+            <div class="dash-stat">
+              <div class="dash-stat-label">Latência Link</div>
+              <div class="dash-stat-val">12ms</div>
+              <div class="dash-stat-change" style="color:var(--green)">Túnel WireGuard OK</div>
             </div>
-            <div style="display:flex; gap:16px;">
-              <div style="flex:1; background:var(--bg); border:1px solid var(--border); border-radius:10px; height:90px;"></div>
-              <div style="flex:1; background:var(--bg); border:1px solid var(--border); border-radius:10px; height:90px;"></div>
+            <div class="dash-stat">
+              <div class="dash-stat-label">Ameaças</div>
+              <div class="dash-stat-val">0</div>
+              <div class="dash-stat-change" style="color:var(--text3)">Bloqueadas no IPsec</div>
             </div>
-         </div>
+            <div class="dash-stat">
+              <div class="dash-stat-label">Proxmox</div>
+              <div class="dash-stat-val">Sync</div>
+              <div class="dash-stat-change" style="color:var(--green)">Backup concluído</div>
+            </div>
+          </div>
+          <div class="chart-wrap" style="margin-bottom: 0;">
+            <div class="chart-head">
+              <span class="chart-head-title">Tráfego de Rede (VLANs Corporativas)</span>
+              <span class="chart-badge">Seguro</span>
+            </div>
+            <div style="display:flex;align-items:flex-end;gap:6px;height:120px;padding-top:12px;">
+              <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:45%;border-top:2px solid var(--sky)"></div>
+              <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:72%;border-top:2px solid var(--sky)"></div>
+              <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:48%;border-top:2px solid var(--sky)"></div>
+              <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:88%;border-top:2px solid var(--sky)"></div>
+              <div style="flex:1;background:rgba(74,158,232,.18);border-radius:3px 3px 0 0;height:65%;border-top:2px solid var(--sky)"></div>
+              <div style="flex:1;background:rgba(74,158,232,.25);border-radius:3px 3px 0 0;height:92%;border-top:2px solid var(--sky2)"></div>
+              <div style="flex:1;background:rgba(74,158,232,.35);border-radius:3px 3px 0 0;height:100%;border-top:2px solid var(--sky2)"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING (Planos MSP) -->
+<!-- PRICING -->
 <section class="pricing-section" id="planos">
   <div style="text-align:center">
     <div class="section-tag">Modelo de Contrato</div>
@@ -346,7 +372,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- SECURITY (Padrões de Infraestrutura) -->
+<!-- SECURITY -->
 <section class="security-section" id="seguranca">
   <div class="security-inner">
     <div>
