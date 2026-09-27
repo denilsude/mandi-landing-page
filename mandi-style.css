@@ -109,69 +109,79 @@ footer .nav-logo img { height: 48px !important; width: auto; }
 .hero-trust { margin-top: 24px; }
 .hero-trust-text { color: var(--text3); font-size: 14px; }
 
-.network-map {
+.diagnostic-preview {
   position: relative;
   min-height: 390px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  padding: 40px;
+  padding: 28px 30px;
+  border: 1px solid #244C3D;
   background: #244C3D;
   color: #F5F7F3;
+  box-shadow: 0 20px 48px rgba(32,41,37,.14);
 }
-.network-map::before, .network-map::after {
+.diagnostic-preview::before, .diagnostic-preview::after {
   position: absolute;
   content: '';
   pointer-events: none;
 }
-.network-map::before {
-  inset: 0;
-  opacity: .18;
-  background-image: linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px);
-  background-size: 34px 34px;
-}
-.network-map::after {
-  inset: 20px;
-  border: 1px solid rgba(255,255,255,.22);
-}
-.network-node {
-  position: relative;
-  z-index: 1;
-  min-width: 126px;
-  min-height: 66px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 12px 16px;
-  border: 1px solid rgba(255,255,255,.42);
-  background: #244C3D;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-}
-.network-icon { color: #D5B587; font-size: 22px; line-height: 1; }
-.network-internet { min-width: 156px; }
-.network-connection { width: 1px; height: 42px; background: #D5B587; }
-.network-branches {
-  position: relative;
-  width: 50%;
-  height: 44px;
-  border-top: 1px solid #D5B587;
-}
-.network-branches span {
-  position: absolute;
-  top: 0;
-  width: 1px;
-  height: 43px;
+.diagnostic-preview::before {
+  inset: 0 0 auto;
+  height: 4px;
   background: #D5B587;
 }
-.network-branches span:first-child { left: 0; }
-.network-branches span:last-child { right: 0; }
-.network-endpoints { z-index: 1; width: 100%; display: flex; justify-content: space-between; }
-.network-map > p { z-index: 1; margin-top: 34px; color: #DBE5DC; font-size: 14px; }
+.diagnostic-preview::after {
+  right: -54px;
+  bottom: -74px;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 24px rgba(255,255,255,.035), 0 0 0 48px rgba(255,255,255,.025);
+}
+.diagnostic-preview-top, .diagnostic-preview-title, .diagnostic-preview-list, .diagnostic-preview-note {
+  position: relative;
+  z-index: 1;
+}
+.diagnostic-preview-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+  color: #DBE5DC;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+}
+.diagnostic-preview-title {
+  margin: 22px 0 8px;
+  color: #F5F7F3;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+.diagnostic-preview-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.diagnostic-preview-list li {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 16px;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.16);
+}
+.diagnostic-preview-list li > span { color: #D5B587; font-size: 13px; font-weight: 700; }
+.diagnostic-preview-list strong, .diagnostic-preview-list small { display: block; }
+.diagnostic-preview-list strong { color: #F5F7F3; font-size: 16px; font-weight: 600; }
+.diagnostic-preview-list small { margin-top: 2px; color: #C3CEC6; font-size: 13px; line-height: 1.35; }
+.diagnostic-preview-list b { color: #D5B587; font-size: 18px; font-weight: 400; }
+.diagnostic-preview-note { margin: 17px 0 0; color: #DBE5DC; font-size: 13px; }
+.diagnostic-preview-note span { margin-right: 7px; color: #D5B587; font-weight: 700; }
 
 .features-section, .pricing-section, .security-section, .app-section, .faq-section {
   padding: 96px max(32px, calc((100vw - var(--max-w)) / 2));
@@ -217,6 +227,8 @@ footer .nav-logo img { height: 48px !important; width: auto; }
 
 .pricing-section { background: var(--bg); }
 .pricing-section > div:first-child { text-align: left !important; }
+.pricing-context { max-width: 760px; margin-top: 18px; }
+.pricing-context p + p { margin-top: 10px; }
 .pricing-grid { gap: 14px; }
 .price-card {
   padding: 30px;
@@ -319,9 +331,10 @@ footer [style*="--text3"] { color: #C3CEC6 !important; }
 :focus-visible { outline: 3px solid var(--sky3); outline-offset: 3px; }
 
 @media (max-width: 900px) {
-  .hero { min-height: auto; grid-template-columns: 1fr 1fr; gap: 36px; padding-top: calc(var(--nav-h) + 72px); }
+  .hero { min-height: auto; grid-template-columns: 1fr; gap: 36px; padding-top: calc(var(--nav-h) + 72px); }
+  .hero-content, .hero-visual { width: 100%; max-width: 680px; }
   .hero h1 { font-size: 52px; }
-  .network-map { min-height: 340px; padding: 30px; }
+  .diagnostic-preview { min-height: auto; }
   .sticky-cards { grid-template-columns: 1fr; }
   .sticky-card { min-height: auto; }
   .security-badges { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -342,11 +355,11 @@ footer [style*="--text3"] { color: #C3CEC6 !important; }
   .hero-sub { font-size: 17px; }
   .hero-btns { align-items: stretch; flex-direction: column; }
   .hero-btns .btn-whatsapp, .hero-btns .btn-outline { width: 100%; }
-  .network-map { min-height: 330px; padding: 26px; }
-  .network-map::after { inset: 12px; }
-  .network-node { min-width: 112px; font-size: 14px; }
-  .network-internet { min-width: 142px; }
-  .network-endpoints { gap: 12px; }
+  .diagnostic-preview { padding: 24px 20px; }
+  .diagnostic-preview-top { font-size: 10px; }
+  .diagnostic-preview-list li { grid-template-columns: 24px minmax(0, 1fr) 14px; gap: 9px; }
+  .diagnostic-preview-list strong { font-size: 15px; }
+  .diagnostic-preview-list small { font-size: 12px; }
   .features-section, .pricing-section, .security-section, .app-section, .faq-section { padding: 68px 20px; }
   .process-section { padding: 68px 20px; }
   .process-steps { grid-template-columns: 1fr; }
