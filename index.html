@@ -424,7 +424,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    
+
+    // ── Origem da visita (UTM) ──────────────────────────────────────────
+    // Guarda os parâmetros de campanha para que o lead chegue ao CRM com a
+    // origem real. Sem isso, todo lead entra como "landing" e não dá para
+    // saber se veio do Google, do Instagram ou de indicação.
+    try {
+      const qs = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {
+        const v = qs.get(k);
+        if (v) sessionStorage.setItem('mandi_' + k, String(v).slice(0, 120));
+      });
+      // Registra a visita no dataLayer para o GTM/GA4
+      const _src = qs.get('utm_source') || sessionStorage.getItem('mandi_utm_source') || 'direto';
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'origem_identificada', origem_lead: _src });
+    } catch (e) { /* navegador antigo: segue sem UTM */ }
+
     const nav = document.getElementById('mainNav');
     window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10));
     
@@ -484,6 +500,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         btnSubmit.textContent = "Enviando...";
         btnSubmit.disabled = true;
         formStatus.textContent = "Enviando sua mensagem.";
+
+        // ── Origem real do lead ─────────────────────────────────────────
+        // Substitui o valor fixo do campo oculto pelos UTM da visita.
+        // Se não houver UTM, mantém o valor padrão do HTML.
+        try {
+          const _o = new URLSearchParams(window.location.search);
+          const _v = window.sessionStorage;
+          const _partes = [
+            _o.get('utm_source') || _v.getItem('mandi_utm_source') || '',
+            _o.get('utm_medium') || _v.getItem('mandi_utm_medium') || '',
+            _o.get('utm_campaign') || _v.getItem('mandi_utm_campaign') || ''
+          ].filter(Boolean);
+          if (_partes.length) {
+            const _campo = form.querySelector('input[name="origem"]');
+            if (_campo) _campo.value = _partes.join(' / ').slice(0, 200);
+          }
+        } catch (err) { /* mantém o valor padrão */ }
         
         try {
           const response = await fetch(form.action, {

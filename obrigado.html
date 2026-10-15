@@ -12,7 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obrigado | Mandi Tecnologia</title>
-    
+
+    <!-- Página de conversão: não deve ser indexada nem seguida -->
+    <meta name="robots" content="noindex, nofollow">
+
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo.png?v=2">
     <meta name="theme-color" content="#202925">
@@ -37,8 +40,13 @@
     <main class="thanks-main">
         <p class="section-tag">Solicitação recebida</p>
         <h1>Obrigado pelo contato.</h1>
-        <p>Recebemos seus dados. A equipe da Mandi vai analisar as informações e entrar em contato para combinar os próximos passos.</p>
-        <a class="thanks-home" href="index.html">Voltar para a página inicial</a>
+        <p>Recebemos os dados da sua empresa. Um especialista da Mandi vai analisar o cenário da sua TI e falar com você <strong>em até 1 dia útil</strong>.</p>
+        <p>Não quer esperar? Chame agora no WhatsApp &mdash; normalmente respondemos em minutos, no horário comercial.</p>
+
+        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:8px;">
+            <a class="btn-whatsapp" href="https://api.whatsapp.com/send?phone=554184594099&amp;text=Ol%C3%A1%2C%20acabei%20de%20enviar%20o%20formul%C3%A1rio%20no%20site%20e%20gostaria%20de%20adiantar%20o%20atendimento." target="_blank" rel="noopener noreferrer">Falar no WhatsApp agora</a>
+            <a class="thanks-home" href="index.html">Conhecer os planos</a>
+        </div>
     </main>
 
     <footer class="thanks-footer">
@@ -51,5 +59,28 @@
             <p>© 2026 Mandi Tecnologia. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- Evento de conversão para o GTM / GA4 -->
+    <script>
+      (function () {
+        // Recupera a origem da visita gravada na landing page
+        var origem = 'direto';
+        var campanha = '';
+        try {
+          var p = new URLSearchParams(window.location.search);
+          origem = p.get('utm_source') || sessionStorage.getItem('mandi_origem') || 'direto';
+          campanha = p.get('utm_campaign') || sessionStorage.getItem('mandi_campanha') || '';
+        } catch (e) { /* navegador antigo: mantém 'direto' */ }
+
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: 'lead_enviado',
+          origem_lead: origem,
+          campanha_lead: campanha,
+          valor_estimado: 600,
+          moeda: 'BRL'
+        });
+      })();
+    </script>
 </body>
 </html>
