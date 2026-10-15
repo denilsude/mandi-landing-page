@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Páginas de conversão e internas: fora do índice
+Disallow: /obrigado.html
+Disallow: /timer.html
+
+Sitemap: https://www.manditecnologia.com.br/sitemap.xml
