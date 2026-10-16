@@ -9,6 +9,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-PFSL99R6');</script>
 <!-- End Google Tag Manager -->
+
+<!-- Google Analytics 4 — Mandi Tecnologia.
+     O GTM (GTM-PFSL99R6) está instalado, mas o container publicado NÃO tem a tag do GA4:
+     por isso o GA4 acusava "nenhum dado recebido". Este bloco resolve direto no HTML.
+     ⚠️ Se um dia a tag do GA4 for criada DENTRO do GTM, apague este bloco primeiro —
+     senão cada visita é contada duas vezes. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GFW2L3RCK7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-GFW2L3RCK7');
+</script>
+<!-- End Google Analytics 4 -->
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mandi Tecnologia — Gestão e Segurança de TI B2B</title>
@@ -393,6 +408,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   
   <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+    <div class="footer-social" style="display:flex; gap:14px; align-items:center;">
+      <a href="https://instagram.com/manditecnologia" target="_blank" rel="noopener noreferrer me" title="Instagram da Mandi Tecnologia" aria-label="Instagram" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:var(--text3); text-decoration:none;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.tiktok.com/@manditecnologia" target="_blank" rel="noopener noreferrer me" title="TikTok da Mandi Tecnologia" aria-label="TikTok" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:var(--text3); text-decoration:none;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 1 1-1.84-2.48V9.77a5.68 5.68 0 1 0 4.93 5.63V8.86a7.34 7.34 0 0 0 4.31 1.39V7.16a4.29 4.29 0 0 1-3.25-1.34Z"/></svg>
+        TikTok
+      </a>
+      <a href="https://www.youtube.com/@MandiTecnologia" target="_blank" rel="noopener noreferrer me" title="Canal da Mandi Tecnologia no YouTube" aria-label="YouTube" style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:var(--text3); text-decoration:none;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.76-1.77C18.25 5 12 5 12 5s-6.25 0-7.84.43A2.5 2.5 0 0 0 2.4 7.2 26.2 26.2 0 0 0 2 12a26.2 26.2 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.76 1.77C5.75 19 12 19 12 19s6.25 0 7.84-.43a2.5 2.5 0 0 0 1.76-1.77A26.2 26.2 0 0 0 22 12a26.2 26.2 0 0 0-.4-4.8ZM10 15.02V8.98L15.2 12 10 15.02Z"/></svg>
+        YouTube
+      </a>
+    </div>
     <div style="font-size:13px; color:var(--text3)">© 2026 Mandi Tecnologia. Todos os direitos reservados.</div>
   </div>
 </footer>
@@ -540,6 +569,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
   });
+</script>
+
+<!-- GA4 — eventos do funil. Sem isto o Analytics só conta visita, e não mostra
+     onde o visitante para (clicou no WhatsApp? começou a preencher? enviou?). -->
+<script>
+  (function () {
+    if (typeof gtag !== 'function') return;
+
+    // 1. Clique em qualquer link de WhatsApp (CTA, header, footer)
+    document.querySelectorAll('a[href*="whatsapp"]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        gtag('event', 'clique_whatsapp', {
+          local_do_cta: (el.textContent || '').trim().slice(0, 40),
+          url_destino: el.getAttribute('href')
+        });
+      });
+    });
+
+    // 2. Começou a preencher o formulário (primeira vez que toca num campo)
+    var form = document.getElementById('mandiForm');
+    if (form) {
+      var jaMarcou = false;
+      form.addEventListener('focusin', function () {
+        if (jaMarcou) return;
+        jaMarcou = true;
+        gtag('event', 'iniciou_formulario');
+      });
+    }
+  })();
 </script>
 </body>
 </html>

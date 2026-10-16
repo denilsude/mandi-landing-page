@@ -9,6 +9,15 @@
     })(window,document,'script','dataLayer','GTM-PFSL99R6');</script>
     <!-- End Google Tag Manager -->
 
+    <!-- Google Analytics 4 — ver comentário no index.html sobre não duplicar com o GTM -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFW2L3RCK7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-GFW2L3RCK7');
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Obrigado | Mandi Tecnologia</title>
@@ -56,6 +65,11 @@
             <p>CNPJ: 64.714.081/0001-74</p>
         </div>
         <div>
+            <p style="margin:0 0 10px; display:flex; gap:14px; flex-wrap:wrap;">
+                <a href="https://instagram.com/manditecnologia" target="_blank" rel="noopener noreferrer me" style="color:inherit;">Instagram</a>
+                <a href="https://www.tiktok.com/@manditecnologia" target="_blank" rel="noopener noreferrer me" style="color:inherit;">TikTok</a>
+                <a href="https://www.youtube.com/@MandiTecnologia" target="_blank" rel="noopener noreferrer me" style="color:inherit;">YouTube</a>
+            </p>
             <p>© 2026 Mandi Tecnologia. Todos os direitos reservados.</p>
         </div>
     </footer>
@@ -80,6 +94,16 @@
           valor_estimado: 600,
           moeda: 'BRL'
         });
+
+        // GA4 recebe o mesmo evento como conversão medida (o GTM não tem a tag do GA4).
+        if (typeof gtag === 'function') {
+          gtag('event', 'lead_enviado', {
+            origem_lead: origem,
+            campanha_lead: campanha,
+            valor_estimado: 600,
+            moeda: 'BRL'
+          });
+        }
       })();
     </script>
 </body>
